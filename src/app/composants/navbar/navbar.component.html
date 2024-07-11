@@ -1,0 +1,27 @@
+<div class="flex justify-between  bg-black text-white py-4 lg:py-3 fixed top-0 w-full z-50">
+    <div  class="ml-10">Logo</div>
+    <div class="lg:flex  mr-10 hidden">
+        <div routerLink="/accueil" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">
+          Home
+        </div>
+        <div routerLink="/about" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
+          About
+        </div>
+        <div routerLink="/service" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
+          Services
+        </div>
+        <div routerLink="/contact" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
+          Contact
+        </div>
+    </div>
+    <div *ngIf="!menu" (click)="togglemenu()" class="lg:hidden"><i class="fa-solid fa-bars mr-5 text-[25px]" ></i></div>
+    <div *ngIf="menu" (click)="closemenu()" class="lg:hidden"><i class="fa-solid fa-x mr-5 text-[25px]" ></i></div>
+</div>
+<div *ngIf="menu" class="fixed block left-0 w-[40%] duration-500 top-0 bg-black text-white px-5 h-screen lg:hidden text-center z-20">
+  <div class="mt-[80%]">
+    <div routerLink="/accueil" class="mt-4">Accueil</div>
+    <div routerLink="/service" class="mt-4">Services</div>
+    <div routerLink="/about"    class="mt-4">About</div>
+    <div routerLink="/contact"  class="mt-4">Contact</div>
+  </div>
+</div>

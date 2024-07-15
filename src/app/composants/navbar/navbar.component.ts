@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css'] // Correction de 'styleUrl' en 'styleUrls'
 })
 export class NavbarComponent {
-menu : boolean = false;
+  menu: boolean = false;
+  scrolled: boolean = false;
 
-togglemenu(){
-  this.menu = true;
-}
-closemenu(){
-  this.menu = false;
-}
+  togglemenu() {
+    this.menu = true;
+  }
+
+  closemenu() {
+    this.menu = false;
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.scrolled = window.scrollY > 0;
+  }
 }

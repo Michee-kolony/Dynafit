@@ -1,31 +1,33 @@
-<div class="flex justify-between  bg-black text-white py-4 lg:py-3 fixed top-0 w-full z-50">
-    <div  class="ml-10">Logo</div>
-    <div class="lg:flex  mr-10 hidden">
-        <div routerLink="/accueil" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">
-          Home
-        </div>
-        <div routerLink="/about" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
-          About
-        </div>
-        <div routerLink="/services" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
-          Services
-        </div>
-        <div routerLink="/marketplace" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
-          Marketplace <i class="fa-solid fa-shop"></i>
-        </div>
-        <div routerLink="/contact" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2  rounded-md">
-          Contact <i class="fa-solid fa-phone"></i>
-        </div>
+<div [ngClass]="{'scrolled': scrolled}" class="flex justify-between bg-black/50 text-white py-4 lg:py-3 fixed top-0 w-full z-50">
+  <div class="ml-10">Logo</div>
+  <div class="lg:flex mr-10 hidden">
+    <div routerLink="/accueil" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">Home</div>
+    <div routerLink="/about" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">About</div>
+    <div routerLink="/services" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">Services</div>
+    <div routerLink="/marketplace" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">
+      Marketplace <i class="fa-solid fa-shop"></i>
     </div>
-    <div *ngIf="!menu" (click)="togglemenu()" class="lg:hidden"><i class="fa-solid fa-bars mr-5 text-[25px]" ></i></div>
-    <div *ngIf="menu" (click)="closemenu()" class="lg:hidden"><i class="fa-solid fa-x mr-5 text-[25px]" ></i></div>
+    <div routerLink="/contact" class="cursor-pointer hover:bg-white hover:text-black px-5 py-2 rounded-md">
+      Contact <i class="fa-solid fa-phone"></i>
+    </div>
+  </div>
+  <div *ngIf="!menu" (click)="togglemenu()" class="lg:hidden">
+    <i class="fa-solid fa-bars mr-5 text-[25px]"></i>
+  </div>
+  <div *ngIf="menu" (click)="closemenu()" class="lg:hidden">
+    <i class="fa-solid fa-x mr-5 text-[25px]"></i>
+  </div>
 </div>
 <div *ngIf="menu" class="fixed block left-0 w-[50%] duration-500 top-0 bg-black text-white px-5 h-screen lg:hidden z-20">
   <div class="mt-[80%]">
     <div routerLink="/accueil" class="mt-4">Accueil</div>
-    <div routerLink="/about"    class="mt-4">About</div>
+    <div routerLink="/about" class="mt-4">About</div>
     <div routerLink="/services" class="mt-4">Services</div>
-    <div routerLink="/Marketplace" class="mt-4">Marketplace  <i class="fa-solid fa-shop"></i></div>
-    <div routerLink="/contact"  class="mt-4">Contact <i class="fa-solid fa-phone"></i></div>
+    <div routerLink="/Marketplace" class="mt-4">
+      Marketplace <i class="fa-solid fa-shop"></i>
+    </div>
+    <div routerLink="/contact" class="mt-4">
+      Contact <i class="fa-solid fa-phone"></i>
+    </div>
   </div>
 </div>
